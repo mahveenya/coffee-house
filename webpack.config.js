@@ -1,55 +1,50 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-const isProduction = process.env.NODE_ENV == 'production'
 
 const stylesHandler = MiniCssExtractPlugin.loader
 
-const config = {
-  entry: path.resolve(__dirname, './src/app.js'),
-  output: {
-    filename: 'app.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  devServer: {
-    open: true,
-    host: 'localhost',
-    watchFiles: ["./src/index.html"],
-    hot: true,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html'),
-      filename: 'index.html',
-    }),
-    new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin(),
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/i,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [stylesHandler, 'css-loader', 'sass-loader'],
-      },
-      {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: 'asset',
-      }
-    ],
-  },
-}
+module.exports = ({ mode } = { mode: 'prod' }) => {
+  console.log(`Running in ${mode} mode`)
 
-module.exports = () => {
-  if (isProduction) {
-    config.mode = 'production'
-  } else {
-    config.mode = 'development'
-  }
-  return config
+  const isProd = mode == 'prod'
+  const envConfig = isProd
+    ? require('./webpack.prod.config')
+    : require('./webpack.dev.config')
+  return merge(
+    {
+      mode,
+      entry: path.resolve(__dirname, './src/app.js'),
+      output: {
+        filename: 'app.js',
+        path: path.resolve(__dirname, 'dist'),
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/i,
+            loader: 'babel-loader',
+          },
+          {
+            test: /\.scss$/i,
+            use: [
+              mode === 'prod' ? stylesHandler : 'style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                },
+              },
+              'sass-loader',
+            ],
+          },
+          {
+            test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+            type: 'asset',
+          },
+        ],
+      },
+    },
+    envConfig,
+  )
 }
