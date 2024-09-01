@@ -22,17 +22,15 @@ module.exports = ({ mode } = { mode: 'prod' }) => {
       module: {
         rules: [
           {
-            test: /\.(js|jsx)$/i,
-            loader: 'babel-loader',
-          },
-          {
             test: /\.scss$/i,
             use: [
               mode === 'prod' ? stylesHandler : 'style-loader',
               {
                 loader: 'css-loader',
                 options: {
-                  modules: true,
+                  modules: {
+                    localIdentName: '[local]',
+                  },
                 },
               },
               'sass-loader',
