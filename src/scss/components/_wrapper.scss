@@ -1,0 +1,6 @@
+@use '../abstracts' as *;
+
+.wrapper {
+  max-width: $content-size;
+  margin: auto;
+}
