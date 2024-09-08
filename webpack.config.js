@@ -1,30 +1,40 @@
-const path = require('path')
-const { merge } = require('webpack-merge')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path');
+const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const stylesHandler = MiniCssExtractPlugin.loader
+const stylesHandler = MiniCssExtractPlugin.loader;
 
 module.exports = ({ mode } = { mode: 'prod' }) => {
-  console.log(`Running in ${mode} mode`)
+  console.log(`Running in ${mode} mode`);
 
-  const isProd = mode == 'prod'
+  const isProd = mode == 'prod';
   const envConfig = isProd
     ? require('./webpack.prod.config')
-    : require('./webpack.dev.config')
+    : require('./webpack.dev.config');
   return merge(
     {
       mode,
-      entry: path.resolve(__dirname, './src/app.js'),
+      entry: {
+        app: [
+          path.resolve(__dirname, './src/app.js'),
+          path.resolve(__dirname, './src/scss/style.scss'),
+        ],
+      },
       output: {
-        filename: 'app.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
+        assetModuleFilename: 'assets/[name][ext]',
       },
       module: {
         rules: [
           {
+            test: /\.html$/i,
+            loader: 'html-loader',
+          },
+          {
             test: /\.scss$/i,
             use: [
-              mode === 'prod' ? stylesHandler : 'style-loader',
+              isProd ? stylesHandler : 'style-loader',
               {
                 loader: 'css-loader',
                 options: {
@@ -38,11 +48,11 @@ module.exports = ({ mode } = { mode: 'prod' }) => {
           },
           {
             test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-            type: 'asset',
+            type: 'asset/resource',
           },
         ],
       },
     },
     envConfig,
-  )
-}
+  );
+};

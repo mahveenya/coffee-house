@@ -12,7 +12,9 @@
   "description": "Coffee House",
   "devDependencies": {
     "@webpack-cli/generators": "^3.0.7",
+    "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.1.2",
+    "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.1",
     "prettier": "^3.3.3",
@@ -23,8 +25,5 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4",
     "webpack-merge": "^6.0.1"
-  },
-  "dependencies": {
-    "clean-webpack-plugin": "^4.0.0"
   }
 }
