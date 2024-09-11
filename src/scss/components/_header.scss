@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .header {
-  margin: $header-margins;
+  margin: $header-margin;
 
   .nav_list {
     display: flex;
@@ -18,11 +18,11 @@
         justify-content: flex-end;
       }
 
-      & .nav_link {
+      .nav_link {
         text-decoration: none;
         color: inherit;
         position: relative;
-        @include underline(':not(:has(.logo_svg))', $text-base-color);
+        @include underline($text-base-color, ':not(:has(.logo_svg))');
 
         &.menu_link {
           display: flex;
