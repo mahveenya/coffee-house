@@ -6,3 +6,19 @@ body {
   background-color: $bg-base-color;
   color: $text-base-color;
 }
+
+h1 {
+  font-size: $xxl-fs;
+  line-height: 105%;
+  letter-spacing: 0.15rem;
+}
+
+p {
+  font-weight: $normal-weight;
+  line-height: 150%;
+}
+
+.title_accent {
+  color: $accent-color;
+  font-style: $accent-style;
+}

@@ -28,3 +28,22 @@
     }
   }
 }
+
+@mixin button(
+  $padding,
+  $width,
+  $height,
+  $radius,
+  $bg-color: inherit,
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: $padding;
+  width: $width;
+  height: $height;
+  border-style: none;
+  border-radius: $radius;
+  background-color: $bg-color;
+}

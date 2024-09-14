@@ -16,7 +16,7 @@ module.exports = ({ mode } = { mode: 'prod' }) => {
       mode,
       entry: {
         app: [
-          path.resolve(__dirname, './src/app.js'),
+          path.resolve(__dirname, './src/index.js'),
           path.resolve(__dirname, './src/scss/style.scss'),
         ],
       },
