@@ -24,6 +24,7 @@
         $radius: $big-button-border-radius,
         $bg-color: $bg-base-color,
       );
+      position: relative;
 
       .btn_text {
         position: absolute;
