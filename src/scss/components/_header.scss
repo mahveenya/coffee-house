@@ -22,7 +22,7 @@
         text-decoration: none;
         color: inherit;
         position: relative;
-        @include underline($text-base-color, ':not(:has(.logo_svg))');
+        @include underline($text-base-color, ':not(:has(.logo))');
 
         &.menu_link {
           display: flex;
