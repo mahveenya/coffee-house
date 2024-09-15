@@ -1,16 +1,16 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const { merge } = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const stylesHandler = MiniCssExtractPlugin.loader;
+const stylesHandler = MiniCssExtractPlugin.loader
 
 module.exports = ({ mode } = { mode: 'prod' }) => {
-  console.log(`Running in ${mode} mode`);
+  console.log(`Running in ${mode} mode`)
 
-  const isProd = mode == 'prod';
+  const isProd = mode == 'prod'
   const envConfig = isProd
     ? require('./webpack.prod.config')
-    : require('./webpack.dev.config');
+    : require('./webpack.dev.config')
   return merge(
     {
       mode,
@@ -53,6 +53,6 @@ module.exports = ({ mode } = { mode: 'prod' }) => {
         ],
       },
     },
-    envConfig,
-  );
-};
+    envConfig
+  )
+}

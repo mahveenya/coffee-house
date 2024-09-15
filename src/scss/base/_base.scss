@@ -8,17 +8,30 @@ body {
 }
 
 h1 {
-  font-size: $xxl-fs;
-  line-height: 105%;
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
   letter-spacing: 0.15rem;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  line-height: normal;
+  letter-spacing: 0.12rem;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  line-height: normal;
+  letter-spacing: 0.02rem;
 }
 
 p {
   font-weight: $normal-weight;
-  line-height: 150%;
+  line-height: $description-line-height;
+  letter-spacing: 0.005rem;
 }
 
-.title_accent {
+.title__accent {
   color: $accent-color;
   font-style: $accent-style;
 }

@@ -8,10 +8,7 @@
     width: 0;
     height: 2px;
     background: $underlineColor;
-    transition:
-      width 0.5s ease,
-      left 0.5s ease,
-      opacity 0.5s linear;
+    transition: all 0.5s ease;
     transform: translateY(50%);
   }
   @if $condition {
@@ -30,11 +27,12 @@
 }
 
 @mixin button(
-  $padding,
-  $width,
-  $height,
-  $radius,
+  $padding: unset,
+  $width: unset,
+  $height: unset,
+  $radius: unset,
   $bg-color: inherit,
+  $border: none
 ) {
   display: flex;
   justify-content: center;
@@ -42,7 +40,7 @@
   padding: $padding;
   width: $width;
   height: $height;
-  border-style: none;
+  border: $border;
   border-radius: $radius;
   background-color: $bg-color;
 }

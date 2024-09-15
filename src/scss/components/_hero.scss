@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-#hero {
+.hero {
   display: flex;
   padding: $hero-padding;
   background-image: url('../assets/img/hero.png');
@@ -22,17 +22,17 @@
         $width: $big-button-width,
         $height: $big-button-height,
         $radius: $big-button-border-radius,
-        $bg-color: $bg-base-color,
+        $bg-color: $bg-base-color
       );
       position: relative;
 
-      .btn_text {
+      .hero_btn-text {
         position: absolute;
         left: 5rem;
         transition: ease, 0.5s;
       }
 
-      .btn_svg {
+      .hero_btn-svg {
         position: absolute;
         right: 3.8rem;
         opacity: 0;
@@ -43,10 +43,10 @@
 
       &:hover {
         cursor: pointer;
-        &:hover .btn_text {
+        & .hero_btn-text {
           transform: translateX(-12px);
         }
-        &:hover .btn_svg {
+        & .hero_btn-svg {
           opacity: 1;
         }
       }
