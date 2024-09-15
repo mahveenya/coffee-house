@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  position: relative;
 
   .favorite_title {
     text-align: center;
@@ -12,18 +13,18 @@
 }
 
 .slider {
-  position: relative;
   overflow: hidden;
+  max-width: 1360px;
+}
 
-  .slider_slides-container {
-    display: flex;
+.slider_slides-container {
+  display: flex;
+}
 
-    .slider_slide-container {
-      display: flex;
-      justify-content: center;
-      min-width: 100%;
-    }
-  }
+.slider_slide-container {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
 }
 
 .slider_slide {
@@ -43,12 +44,39 @@
 
 .slider_arrow {
   @include button();
+  &:hover {
+    cursor: pointer;
+  }
+
+  & svg {
+    fill: $bg-base-color;
+    transition: all ease 0.5s;
+  }
+  &:hover svg {
+    fill: $text-base-color;
+  }
+  & svg path {
+    color: $text-base-color;
+    transition: all ease 0.5s;
+  }
+  &:hover svg path {
+    color: $bg-base-color;
+  }
+  & svg rect {
+    color: $text-base-color;
+  }
+
   &--left,
   &--right {
     position: absolute;
     top: 50%;
     transform: translateY(-85%);
   }
+
+  &--left {
+    left: 0;
+  }
+
   &--right {
     right: 0;
   }
