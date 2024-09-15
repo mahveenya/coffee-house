@@ -1,4 +1,4 @@
-@mixin underline($underlineColor, $condition) {
+@mixin underline($underlineColor) {
   &::before {
     content: '';
     position: absolute;
@@ -11,18 +11,11 @@
     transition: all 0.5s ease;
     transform: translateY(50%);
   }
-  @if $condition {
-    &#{$condition}:hover::before {
-      width: 100%;
-      left: 0%;
-      opacity: 1;
-    }
-  } @else {
-    &:hover::before {
-      width: 100%;
-      left: 0%;
-      opacity: 1;
-    }
+
+  &:hover::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
   }
 }
 
@@ -40,6 +33,7 @@
   padding: $padding;
   width: $width;
   height: $height;
+  font: inherit;
   border: $border;
   border-radius: $radius;
   background-color: $bg-color;
