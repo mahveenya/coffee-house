@@ -31,7 +31,7 @@ p {
   letter-spacing: 0.005rem;
 }
 
-.title__accent {
+[class$='title__accent'] {
   color: $accent-color;
   font-style: $accent-style;
 }

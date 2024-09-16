@@ -1,0 +1,49 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.about_image-gallery {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(7, 7.3rem);
+  grid-template-areas:
+    'image-1 image-3'
+    'image-1 image-3'
+    'image-1 image-3'
+    'image-1 image-4'
+    'image-2 image-4'
+    'image-2 image-4'
+    'image-2 image-4';
+}
+
+.about_image-container {
+  border-radius: 20px;
+  overflow: hidden;
+  .about_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.1);
+    transition: ease 0.5s;
+  }
+  &:hover .about_image {
+    transform: scale(1);
+  }
+}
+
+.about_image-container-1 {
+  grid-area: image-1;
+}
+.about_image-container-2 {
+  grid-area: image-2;
+}
+.about_image-container-3 {
+  grid-area: image-3;
+}
+.about_image-container-4 {
+  grid-area: image-4;
+}
