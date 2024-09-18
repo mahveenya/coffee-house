@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-.hero-section {
+.hero {
   padding: $hero-padding;
   background-image: url('../assets/img/hero.png');
   background-size: cover;
@@ -10,26 +10,20 @@
   background-color: $fallback-bg-color;
   border-radius: 2.5rem;
 
-  .hero_content {
-    @extend %content;
+  .hero__content {
     max-width: $hero-content-size;
-    .hero_btn {
-      @include button(
-        $padding: $big-button-padding,
-        $width: $big-button-width,
-        $height: $big-button-height,
-        $radius: $big-button-border-radius,
-        $bg-color: $bg-base-color
-      );
+    .hero__btn {
+      background-color: $bg-base-color;
+      border: none;
       position: relative;
 
-      .hero_btn-text {
+      .hero__btn-text {
         position: absolute;
         left: 5rem;
         transition: ease, 0.5s;
       }
 
-      .hero_btn-svg {
+      .hero__btn-svg {
         position: absolute;
         right: 3.8rem;
         opacity: 0;

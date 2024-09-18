@@ -1,6 +1,6 @@
 @use '../abstracts' as *;
 
-.favorite-section {
+.favorite {
   align-items: center;
   position: relative;
 }
@@ -11,19 +11,19 @@
   max-width: 100%;
 }
 
-.slider_slide-container {
+.slider__slide-container {
   display: flex;
   justify-content: center;
   min-width: 100%;
 }
 
-.slider_slide {
+.slider__slide {
   display: flex;
   flex-direction: column;
   max-width: $slide-size;
   gap: 1.5rem;
 
-  .slide_figcaption {
+  .slide__figcaption {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,8 +32,8 @@
   }
 }
 
-.slider_arrow {
-  @include button();
+.slider__arrow {
+  border: none;
   &:hover {
     cursor: pointer;
   }
@@ -71,18 +71,16 @@
   }
 }
 
-.slider_nav {
+.slider__nav {
   display: flex;
   justify-content: center;
   gap: 0.75rem;
 
-  .slider_indicator {
-    @include button(
-      $width: 2.5rem,
-      $height: 0.25rem,
-      $bg-color: $border-light,
-      $radius: 1rem
-    );
+  .slider__indicator {
+    width: 2.5rem;
+    height: 5px;
+    border: none;
+    background-color: $border-light;
     &.current-slide {
       background-color: $border-dark;
     }

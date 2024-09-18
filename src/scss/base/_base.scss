@@ -31,13 +31,25 @@ p {
   letter-spacing: 0.005rem;
 }
 
-.section {
+.base-flex {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
 
-.content_title__accent {
+.text-accent {
   color: $accent-color;
   font-style: $accent-style;
+}
+
+.btn {
+  @extend %button;
+  border: solid 1px $border-dark;
+}
+
+.btn-big {
+  @extend .btn;
+  padding: $big-button-padding;
+  width: $big-button-width;
+  height: $big-button-height;
 }

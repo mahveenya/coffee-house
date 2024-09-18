@@ -18,23 +18,3 @@
     opacity: 1;
   }
 }
-
-@mixin button(
-  $padding: unset,
-  $width: unset,
-  $height: unset,
-  $radius: unset,
-  $bg-color: inherit,
-  $border: none
-) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: $padding;
-  width: $width;
-  height: $height;
-  font: inherit;
-  border: $border;
-  border-radius: $radius;
-  background-color: $bg-color;
-}

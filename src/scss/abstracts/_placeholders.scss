@@ -1,5 +1,11 @@
-%content {
+%button {
   display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  align-items: center;
+  font: inherit;
+  border-radius: 6.25rem;
+  background-color: inherit;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
