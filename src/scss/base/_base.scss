@@ -31,7 +31,13 @@ p {
   letter-spacing: 0.005rem;
 }
 
-[class$='title__accent'] {
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.content_title__accent {
   color: $accent-color;
   font-style: $accent-style;
 }

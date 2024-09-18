@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
-.hero {
-  display: flex;
+.hero-section {
   padding: $hero-padding;
   background-image: url('../assets/img/hero.png');
   background-size: cover;
@@ -12,9 +11,7 @@
   border-radius: 2.5rem;
 
   .hero_content {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    @extend %content;
     max-width: $hero-content-size;
     .hero_btn {
       @include button(
