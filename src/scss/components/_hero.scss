@@ -34,10 +34,10 @@
 
       &:hover {
         cursor: pointer;
-        & .hero_btn-text {
+        & .hero__btn-text {
           transform: translateX(-12px);
         }
-        & .hero_btn-svg {
+        & .hero__btn-svg {
           opacity: 1;
         }
       }
