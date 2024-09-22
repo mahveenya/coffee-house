@@ -1,4 +1,7 @@
 @mixin underline($underlineColor) {
+  & {
+    position: relative;
+  }
   &::before {
     content: '';
     position: absolute;

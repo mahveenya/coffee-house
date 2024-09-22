@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.footer {
+  display: flex;
+  gap: 100px;
+  padding: 100px;
+  color: $bg-base-color;
+  background-color: $border-dark;
+  border-radius: 2.5rem;
+
+  &__title-and-socials {
+    flex-grow: 1;
+    max-width: $content-width;
+  }
+
+  &__contacts-title-and-contacts {
+    justify-content: center;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    &-item {
+      display: flex;
+      gap: 0.5rem;
+      &:is(a) {
+        @include underline($bg-base-color);
+      }
+    }
+  }
+}

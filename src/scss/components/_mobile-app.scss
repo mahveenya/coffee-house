@@ -2,9 +2,14 @@
 
 .mobile-app {
   display: flex;
+  gap: 100px;
   &__store-buttons {
     display: flex;
     gap: 1.25rem;
+  }
+
+  &__content {
+    justify-content: center;
   }
 
   &__store-button {

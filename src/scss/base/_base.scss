@@ -58,6 +58,12 @@ p {
   line-height: $caption-line-height;
 }
 
-svg path {
+svg path,
+svg rect {
   transition: $base-transition;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
 }

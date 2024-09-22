@@ -20,9 +20,6 @@
     }
 
     .nav_link {
-      text-decoration: none;
-      color: inherit;
-      position: relative;
       &:not(:has(.logo_svg)) {
         @include underline($text-base-color);
       }

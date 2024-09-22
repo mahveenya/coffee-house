@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .wrapper {
-  max-width: $content-size;
+  max-width: $max-page-width;
   margin-inline: auto;
   padding: 0 2.5rem;
 }

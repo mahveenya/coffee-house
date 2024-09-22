@@ -6,12 +6,12 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: $text-light-color;
+  color: $bg-base-color;
   background-color: $fallback-bg-color;
   border-radius: 2.5rem;
 
   .hero__content {
-    max-width: $hero-content-size;
+    max-width: $content-width;
     .hero__btn {
       background-color: $bg-base-color;
       border: none;
