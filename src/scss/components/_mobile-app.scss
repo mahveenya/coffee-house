@@ -2,6 +2,7 @@
 
 .mobile-app {
   display: flex;
+  flex-wrap: wrap;
   gap: 100px;
   &__store-buttons {
     display: flex;
