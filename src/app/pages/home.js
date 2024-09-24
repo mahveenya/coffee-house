@@ -1,5 +1,7 @@
+import { Slider } from '../components/slider'
+
 export class HomePage {
   constructor() {
-    this.heroButtonAnimation = new HeroButtonAnimation()
+    this.slider = new Slider()
   }
 }

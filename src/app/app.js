@@ -1,4 +1,4 @@
-import { HomePage } from './pages/home/home'
+import { HomePage } from './pages/home'
 
 export class App {
   constructor() {
