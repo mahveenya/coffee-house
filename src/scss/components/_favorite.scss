@@ -76,9 +76,10 @@
 
   .slider__indicator {
     width: 2.5rem;
-    height: 5px;
-    border: none;
+    height: 0.3rem;
+    border-radius: 6rem;
     background-color: $border-light;
+    transition: $base-transition;
     &.current-slide {
       background-color: $border-dark;
     }
